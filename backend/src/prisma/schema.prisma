@@ -1,0 +1,32 @@
+
+model User {
+  id               String         @id
+  email            String         @unique
+  passwordHash     String
+  stripeCustomerId String?        @unique
+  subscriptions    Subscription[]
+  createdAt        TimestamptzString @default(now())
+  updatedAt        temporal.updatedAtString()
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  CANCELED
+  PAST_DUE
+  TRIALING
+  INCOMPLETE
+  UNPAID
+}
+
+model Subscription {
+  id                   String             @id
+  userId               String
+  user                 User               @relation(fields: [userId], references: [id])
+  stripeSubscriptionId String             @unique
+  stripePriceId        String
+  status               SubscriptionStatus
+  currentPeriodEnd     TimestamptzString
+  cancelAtPeriodEnd    Boolean            @default(false)
+  createdAt            TimestamptzString  @default(now())
+  updatedAt            temporal.updatedAtString()
+}

@@ -1,8 +1,13 @@
 import Fastify from 'fastify'
+import { registerJwt } from './plugins/jwt'
+import { authRoutes } from './routes/auth.routes'
 
 const fastify = Fastify({
     logger: true
 })
+
+registerJwt(fastify)
+fastify.register(authRoutes)
 
 fastify.get('/', (request, reply) => {
     reply.send({hello: 'world'})

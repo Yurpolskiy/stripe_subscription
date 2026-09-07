@@ -5,51 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b4123d5-39a4-4943-a8ff-7da4a66ae709" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/prisma.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/adapters/db/PrismaSubscriptionRepository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/adapters/db/PrismaUserRepository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/adapters/db/prisma-client.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/adapters/http/plugins/cors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/adapters/http/plugins/jwt.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/adapters/http/routes/auth.routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/adapters/http/routes/subscription.routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/adapters/http/server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/adapters/payment/StripePaymentGateway.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/config/di.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/config/env.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/domain/entities/Subscription.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/domain/entities/User.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/domain/errors/PaymentFailedError.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/domain/errors/UserAlreadyExistsError.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/domain/ports/PaymentGateway.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/domain/ports/SubscriptionRepository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/domain/ports/UserRepository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/domain/use-cases/CancelSubscription.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/domain/use-cases/LoginUser.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/domain/use-cases/RegisterUser.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/domain/use-cases/SubscribeUser.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/.oxlintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pnpm-lock.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/favicon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/hero.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/react.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/vite.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/tsconfig.app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/tsconfig.node.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/vite.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/domain/errors/InvalidCredentialsError.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/prisma.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/adapters/db/PrismaUserRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/adapters/db/PrismaUserRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/adapters/db/prisma-client.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/adapters/http/plugins/jwt.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/adapters/http/plugins/jwt.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/adapters/http/routes/auth.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/adapters/http/routes/auth.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/adapters/http/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/adapters/http/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/config/di.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/config/di.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/config/env.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/config/env.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/domain/entities/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/entities/User.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/domain/errors/UserAlreadyExistsError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/errors/UserAlreadyExistsError.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/domain/ports/UserRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/ports/UserRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/domain/use-cases/LoginUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/use-cases/LoginUser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/domain/use-cases/RegisterUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/use-cases/RegisterUser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,99 +38,102 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.7526233737762091" />
-      <entry key="MS500" value="1.9540764414345069" />
-      <entry key="S2" value="2.3189875368914787" />
-      <entry key="S5" value="3.4139522531181044" />
-      <entry key="S10" value="5.440932296075196" />
-      <entry key="S30" value="8.901669291072395" />
-      <entry key="S60" value="10.294106953636035" />
-      <entry key="M2" value="11.103659997512791" />
-      <entry key="M5" value="11.635009048488879" />
-      <entry key="M10" value="12.596176697201194" />
-      <entry key="M15" value="16.26546889001315" />
-      <entry key="M30" value="36.67135715507848" />
-      <entry key="H1" value="70.77885894419283" />
-      <entry key="H2" value="102.70898510080825" />
-      <entry key="H4" value="124.68865308998149" />
-      <entry key="D1" value="147.02638043825746" />
-      <entry key="W1" value="151.27840896954714" />
+      <entry key="MS100" value="1.194575870331387" />
+      <entry key="MS500" value="3.161047657110166" />
+      <entry key="S2" value="8.196503294987396" />
+      <entry key="S5" value="13.898086278658743" />
+      <entry key="S10" value="18.77518814206553" />
+      <entry key="S30" value="24.218467105400645" />
+      <entry key="S60" value="26.001483307941644" />
+      <entry key="M2" value="26.997983305609193" />
+      <entry key="M5" value="29.768767531830072" />
+      <entry key="M10" value="42.493106589279094" />
+      <entry key="M15" value="64.13211094241606" />
+      <entry key="M30" value="154.46534831500807" />
+      <entry key="H1" value="314.5439951870759" />
+      <entry key="H2" value="488.85170372693386" />
+      <entry key="H4" value="624.6983844628181" />
+      <entry key="D1" value="777.0402557839761" />
+      <entry key="W1" value="807.7358245726097" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="1.3609073746761286E-284" />
-      <entry key="S10" value="1.4559018366486606E-142" />
-      <entry key="S30" value="9.760638111099984E-48" />
-      <entry key="S60" value="5.79153993399037E-24" />
-      <entry key="M2" value="4.7023115986566915E-12" />
-      <entry key="M5" value="6.722086579579992E-5" />
-      <entry key="M10" value="0.01638031599807911" />
-      <entry key="M15" value="0.10236029287999798" />
-      <entry key="M30" value="0.639799379174751" />
-      <entry key="H1" value="1.5997011855042242" />
-      <entry key="H2" value="2.529566864553122" />
-      <entry key="H4" value="3.1809164378210655" />
-      <entry key="D1" value="3.850128778426512" />
-      <entry key="W1" value="3.978237809415293" />
+      <entry key="S2" value="2.0802619958633526E-178" />
+      <entry key="S5" value="9.694319955940084E-72" />
+      <entry key="S10" value="4.030282750881069E-36" />
+      <entry key="S30" value="2.6572750097414917E-12" />
+      <entry key="S60" value="2.8287583934986395E-6" />
+      <entry key="M2" value="0.0032100672950687633" />
+      <entry key="M5" value="0.229861344526809" />
+      <entry key="M10" value="1.0780873960783366" />
+      <entry key="M15" value="2.201042029801776" />
+      <entry key="M30" value="6.744049752941071" />
+      <entry key="H1" value="14.97792260527016" />
+      <entry key="H2" value="23.883930102275407" />
+      <entry key="H4" value="30.71044882772747" />
+      <entry key="D1" value="38.24085945669127" />
+      <entry key="W1" value="39.74290031918213" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.728494489815846" />
-      <entry key="MS500" value="1.9453909639718903" />
-      <entry key="S2" value="2.2853769438252542" />
-      <entry key="S5" value="3.384138343951597" />
-      <entry key="S10" value="5.417951297819264" />
-      <entry key="S30" value="8.889654256595508" />
-      <entry key="S60" value="10.287189822058943" />
-      <entry key="M2" value="11.099931596558054" />
-      <entry key="M5" value="11.633509614859436" />
-      <entry key="M10" value="12.611397718515223" />
-      <entry key="M15" value="16.365923043831234" />
-      <entry key="M30" value="37.306995458387036" />
-      <entry key="H1" value="72.3737824352383" />
-      <entry key="H2" value="105.23489719915705" />
-      <entry key="H4" value="127.86730584161177" />
-      <entry key="D1" value="150.87605797091828" />
-      <entry key="W1" value="155.25658030305675" />
+      <entry key="MS100" value="0.6064893646561315" />
+      <entry key="MS500" value="2.9815336712200136" />
+      <entry key="S2" value="8.136635149595838" />
+      <entry key="S5" value="13.868184672369958" />
+      <entry key="S10" value="18.757747207987137" />
+      <entry key="S30" value="24.21173359662001" />
+      <entry key="S60" value="25.997968899783523" />
+      <entry key="M2" value="26.999252400566867" />
+      <entry key="M5" value="29.9937366625464" />
+      <entry key="M10" value="43.56006975518239" />
+      <entry key="M15" value="66.31656544323279" />
+      <entry key="M30" value="161.181349597817" />
+      <entry key="H1" value="329.49029288812767" />
+      <entry key="H2" value="512.7104243271558" />
+      <entry key="H4" value="655.3926370545547" />
+      <entry key="D1" value="815.277755176275" />
+      <entry key="W1" value="847.4782260370287" />
     </decayedShown>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3J07QLuz9wjcd5uYynNAscsWLQS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
-    "javascript.preferred.runtime.type.id": "node",
-    "junie.onboarding.icon.badge.shown": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.jshint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.jshint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "C:\\Users\\zip\\AppData\\Local\\JetBrains\\WebStorm2026.2\\ts-go-native-preview\\v7.0.0-dev.jetbrains.20260702.4\\node_modules\\@typescript\\native-preview-win32-x64\\lib"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/arch/stripe_subscription&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/arch/.cache/JetBrains/WebStorm2026.2/ts-go-native-preview/v7.0.0-dev.jetbrains.20260702.4/node_modules/@typescript/native-preview-linux-x64/lib&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
         <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
         <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
       </map>
     </option>
   </component>
@@ -176,6 +152,8 @@
       <option name="presentableId" value="Default" />
       <updated>1788786115851</updated>
       <workItem from="1788786117909" duration="4346000" />
+      <workItem from="1788793297703" duration="879000" />
+      <workItem from="1788794324475" duration="5890000" />
     </task>
     <servers />
   </component>
