@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4b4123d5-39a4-4943-a8ff-7da4a66ae709" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/prisma.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/adapters/db/PrismaSubscriptionRepository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/adapters/db/PrismaUserRepository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/adapters/db/prisma-client.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/adapters/http/plugins/cors.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/adapters/http/plugins/jwt.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/adapters/http/routes/auth.routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/adapters/http/routes/subscription.routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/adapters/http/server.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/adapters/payment/StripePaymentGateway.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/config/di.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/config/env.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/domain/entities/Subscription.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/domain/entities/User.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/domain/errors/PaymentFailedError.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/domain/errors/UserAlreadyExistsError.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/domain/ports/PaymentGateway.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/domain/ports/SubscriptionRepository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/domain/ports/UserRepository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/domain/use-cases/CancelSubscription.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/domain/use-cases/LoginUser.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/domain/use-cases/RegisterUser.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/domain/use-cases/SubscribeUser.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.oxlintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pnpm-lock.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/favicon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/hero.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/react.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/vite.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/tsconfig.node.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/vite.config.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.7526233737762091" />
+      <entry key="MS500" value="1.9540764414345069" />
+      <entry key="S2" value="2.3189875368914787" />
+      <entry key="S5" value="3.4139522531181044" />
+      <entry key="S10" value="5.440932296075196" />
+      <entry key="S30" value="8.901669291072395" />
+      <entry key="S60" value="10.294106953636035" />
+      <entry key="M2" value="11.103659997512791" />
+      <entry key="M5" value="11.635009048488879" />
+      <entry key="M10" value="12.596176697201194" />
+      <entry key="M15" value="16.26546889001315" />
+      <entry key="M30" value="36.67135715507848" />
+      <entry key="H1" value="70.77885894419283" />
+      <entry key="H2" value="102.70898510080825" />
+      <entry key="H4" value="124.68865308998149" />
+      <entry key="D1" value="147.02638043825746" />
+      <entry key="W1" value="151.27840896954714" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="1.3609073746761286E-284" />
+      <entry key="S10" value="1.4559018366486606E-142" />
+      <entry key="S30" value="9.760638111099984E-48" />
+      <entry key="S60" value="5.79153993399037E-24" />
+      <entry key="M2" value="4.7023115986566915E-12" />
+      <entry key="M5" value="6.722086579579992E-5" />
+      <entry key="M10" value="0.01638031599807911" />
+      <entry key="M15" value="0.10236029287999798" />
+      <entry key="M30" value="0.639799379174751" />
+      <entry key="H1" value="1.5997011855042242" />
+      <entry key="H2" value="2.529566864553122" />
+      <entry key="H4" value="3.1809164378210655" />
+      <entry key="D1" value="3.850128778426512" />
+      <entry key="W1" value="3.978237809415293" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.728494489815846" />
+      <entry key="MS500" value="1.9453909639718903" />
+      <entry key="S2" value="2.2853769438252542" />
+      <entry key="S5" value="3.384138343951597" />
+      <entry key="S10" value="5.417951297819264" />
+      <entry key="S30" value="8.889654256595508" />
+      <entry key="S60" value="10.287189822058943" />
+      <entry key="M2" value="11.099931596558054" />
+      <entry key="M5" value="11.633509614859436" />
+      <entry key="M10" value="12.611397718515223" />
+      <entry key="M15" value="16.365923043831234" />
+      <entry key="M30" value="37.306995458387036" />
+      <entry key="H1" value="72.3737824352383" />
+      <entry key="H2" value="105.23489719915705" />
+      <entry key="H4" value="127.86730584161177" />
+      <entry key="D1" value="150.87605797091828" />
+      <entry key="W1" value="155.25658030305675" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3J07QLuz9wjcd5uYynNAscsWLQS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "C:\\Users\\zip\\AppData\\Local\\JetBrains\\WebStorm2026.2\\ts-go-native-preview\\v7.0.0-dev.jetbrains.20260702.4\\node_modules\\@typescript\\native-preview-win32-x64\\lib"
+  }
+}]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
+        <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.9437.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4b4123d5-39a4-4943-a8ff-7da4a66ae709" name="Changes" comment="" />
+      <created>1788786115851</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1788786115851</updated>
+      <workItem from="1788786117909" duration="4346000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
