@@ -13,7 +13,7 @@ export class RegisterUser {
         if(existing) throw new UserAlreadyExistsError(email)
 
         const passwordHash = await bcrypt.hash(password, 10) // потом засунуть в .env
-        const user = new User(randomUUID(), email, passwordHash) // айдишник потом генерить на уровне базы
+        const user = new User(randomUUID(), email, passwordHash, null) // айдишник потом генерить на уровне базы
 
         await this.users.save(user)
         return user

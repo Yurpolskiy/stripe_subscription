@@ -5,24 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b4123d5-39a4-4943-a8ff-7da4a66ae709" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/domain/errors/InvalidCredentialsError.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/prisma.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/adapters/db/PrismaSubscriptionRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/adapters/db/PrismaSubscriptionRepository.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/adapters/db/PrismaUserRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/adapters/db/PrismaUserRepository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/adapters/db/prisma-client.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/adapters/http/plugins/jwt.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/adapters/http/plugins/jwt.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/adapters/http/routes/auth.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/adapters/http/routes/auth.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/adapters/http/routes/subscription.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/adapters/http/routes/subscription.routes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/adapters/http/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/adapters/http/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/adapters/payment/StripePaymentGateway.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/adapters/payment/StripePaymentGateway.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/config/di.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/config/di.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/config/env.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/config/env.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/domain/entities/Subscription.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/entities/Subscription.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/domain/entities/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/entities/User.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/domain/errors/UserAlreadyExistsError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/errors/UserAlreadyExistsError.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/domain/ports/PaymentGateway.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/ports/PaymentGateway.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/domain/ports/SubscriptionRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/ports/SubscriptionRepository.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/domain/ports/UserRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/ports/UserRepository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/domain/use-cases/LoginUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/use-cases/LoginUser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/domain/use-cases/CancelSubscription.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/use-cases/CancelSubscription.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/domain/use-cases/RegisterUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/use-cases/RegisterUser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/domain/use-cases/SubscribeUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/use-cases/SubscribeUser.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,61 +36,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.194575870331387" />
-      <entry key="MS500" value="3.161047657110166" />
-      <entry key="S2" value="8.196503294987396" />
-      <entry key="S5" value="13.898086278658743" />
-      <entry key="S10" value="18.77518814206553" />
-      <entry key="S30" value="24.218467105400645" />
-      <entry key="S60" value="26.001483307941644" />
-      <entry key="M2" value="26.997983305609193" />
-      <entry key="M5" value="29.768767531830072" />
-      <entry key="M10" value="42.493106589279094" />
-      <entry key="M15" value="64.13211094241606" />
-      <entry key="M30" value="154.46534831500807" />
-      <entry key="H1" value="314.5439951870759" />
-      <entry key="H2" value="488.85170372693386" />
-      <entry key="H4" value="624.6983844628181" />
-      <entry key="D1" value="777.0402557839761" />
-      <entry key="W1" value="807.7358245726097" />
+      <entry key="MS100" value="1.5386165070078788E-11" />
+      <entry key="MS500" value="0.008229669508414191" />
+      <entry key="S2" value="0.47977012791390694" />
+      <entry key="S5" value="1.1765931809121501" />
+      <entry key="S10" value="2.392508784298698" />
+      <entry key="S30" value="11.92844241625124" />
+      <entry key="S60" value="28.54046532245792" />
+      <entry key="M2" value="53.70668178451792" />
+      <entry key="M5" value="89.75233484104544" />
+      <entry key="M10" value="114.25203654733406" />
+      <entry key="M15" value="127.45380009724508" />
+      <entry key="M30" value="152.29241009388036" />
+      <entry key="H1" value="209.1239336025782" />
+      <entry key="H2" value="365.81607366581136" />
+      <entry key="H4" value="603.8636303918628" />
+      <entry key="D1" value="1034.1154236853854" />
+      <entry key="W1" value="1145.0876181975893" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="2.0802619958633526E-178" />
-      <entry key="S5" value="9.694319955940084E-72" />
-      <entry key="S10" value="4.030282750881069E-36" />
-      <entry key="S30" value="2.6572750097414917E-12" />
-      <entry key="S60" value="2.8287583934986395E-6" />
-      <entry key="M2" value="0.0032100672950687633" />
-      <entry key="M5" value="0.229861344526809" />
-      <entry key="M10" value="1.0780873960783366" />
-      <entry key="M15" value="2.201042029801776" />
-      <entry key="M30" value="6.744049752941071" />
-      <entry key="H1" value="14.97792260527016" />
-      <entry key="H2" value="23.883930102275407" />
-      <entry key="H4" value="30.71044882772747" />
-      <entry key="D1" value="38.24085945669127" />
-      <entry key="W1" value="39.74290031918213" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000000217330127" />
+      <entry key="S5" value="1.0011852970191653" />
+      <entry key="S10" value="1.053896883869213" />
+      <entry key="S30" value="1.8780667570786167" />
+      <entry key="S60" value="3.2545311018061427" />
+      <entry key="M2" value="5.943848615390169" />
+      <entry key="M5" value="11.568603673738236" />
+      <entry key="M10" value="16.241438594399703" />
+      <entry key="M15" value="18.88997149281349" />
+      <entry key="M30" value="23.802360474739004" />
+      <entry key="H1" value="30.7682669487059" />
+      <entry key="H2" value="42.14704486828084" />
+      <entry key="H4" value="56.37007006809809" />
+      <entry key="D1" value="80.02862926984793" />
+      <entry key="W1" value="85.94392295452904" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.6064893646561315" />
-      <entry key="MS500" value="2.9815336712200136" />
-      <entry key="S2" value="8.136635149595838" />
-      <entry key="S5" value="13.868184672369958" />
-      <entry key="S10" value="18.757747207987137" />
-      <entry key="S30" value="24.21173359662001" />
-      <entry key="S60" value="25.997968899783523" />
-      <entry key="M2" value="26.999252400566867" />
-      <entry key="M5" value="29.9937366625464" />
-      <entry key="M10" value="43.56006975518239" />
-      <entry key="M15" value="66.31656544323279" />
-      <entry key="M30" value="161.181349597817" />
-      <entry key="H1" value="329.49029288812767" />
-      <entry key="H2" value="512.7104243271558" />
-      <entry key="H4" value="655.3926370545547" />
-      <entry key="D1" value="815.277755176275" />
-      <entry key="W1" value="847.4782260370287" />
+      <entry key="MS100" value="2.761448142391679E-8" />
+      <entry key="MS500" value="0.03255951889881907" />
+      <entry key="S2" value="0.7524507273775413" />
+      <entry key="S5" value="1.7292319586486296" />
+      <entry key="S10" value="3.144624286192883" />
+      <entry key="S30" value="13.560527392372855" />
+      <entry key="S60" value="31.548700935928068" />
+      <entry key="M2" value="59.42804910995697" />
+      <entry key="M5" value="101.16730562230221" />
+      <entry key="M10" value="130.38898166269146" />
+      <entry key="M15" value="146.26236025841" />
+      <entry key="M30" value="176.0422199028525" />
+      <entry key="H1" value="239.85615880641535" />
+      <entry key="H2" value="407.93535897531603" />
+      <entry key="H4" value="660.2131390861883" />
+      <entry key="D1" value="1114.1386932375538" />
+      <entry key="W1" value="1231.0307053238093" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -153,7 +151,9 @@
       <updated>1788786115851</updated>
       <workItem from="1788786117909" duration="4346000" />
       <workItem from="1788793297703" duration="879000" />
-      <workItem from="1788794324475" duration="5890000" />
+      <workItem from="1788794324475" duration="6868000" />
+      <workItem from="1788858255071" duration="4519000" />
+      <workItem from="1788871395819" duration="1512000" />
     </task>
     <servers />
   </component>

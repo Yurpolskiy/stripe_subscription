@@ -3,5 +3,6 @@ export class User {
         public readonly id: string,
         public readonly email: string,
         public readonly passwordHash: string,
+        public readonly stripeCustomerId: string | null,
     ) {}
 }

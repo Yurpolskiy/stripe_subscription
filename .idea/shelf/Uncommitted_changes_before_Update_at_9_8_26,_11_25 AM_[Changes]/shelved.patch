@@ -1,0 +1,251 @@
+Index: backend/src/domain/entities/Subscription.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/domain/entities/Subscription.ts b/backend/src/domain/entities/Subscription.ts
+--- a/backend/src/domain/entities/Subscription.ts	(revision 07ea4c9389af5469c545aeccce2cc6ffdc391d98)
++++ b/backend/src/domain/entities/Subscription.ts	(date 1788858832899)
+@@ -1,0 +1,19 @@
++export type SubscriptionStatus =
++    | 'ACTIVE'
++    | 'CANCELED'
++    | 'PAST_DUE'
++    | 'TRIALING'
++    | 'INCOMPLETE'
++    | 'UNPAID'
++
++export class Subscription {
++    constructor(
++        public readonly id: string,
++        public readonly userId: string,
++        public readonly stripeSubscriptionId: string,
++        public readonly stripePriceId: string,
++        public readonly status: SubscriptionStatus,
++        public readonly currentPeriodEnd: Date,
++        public readonly cancelAtPeriodEnd: boolean,
++    ) {}
++}
+Index: backend/src/domain/ports/PaymentGateway.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/domain/ports/PaymentGateway.ts b/backend/src/domain/ports/PaymentGateway.ts
+--- a/backend/src/domain/ports/PaymentGateway.ts	(revision 07ea4c9389af5469c545aeccce2cc6ffdc391d98)
++++ b/backend/src/domain/ports/PaymentGateway.ts	(date 1788859225518)
+@@ -1,0 +1,13 @@
++import type {SubscriptionStatus} from "../entities/Subscription"
++
++export interface CreatedSubscription {
++    id: string
++    status: SubscriptionStatus
++    currentPeriodEnd: Date
++}
++
++export interface PaymentGateway {
++    createCustomer(email: string): Promise<string>
++    createSubscription(customerId: string, priceId: string): Promise<CreatedSubscription>
++    cancelSubscription(stripeSubscriptionId: string): Promise<void>
++}
+Index: backend/src/domain/ports/SubscriptionRepository.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/domain/ports/SubscriptionRepository.ts b/backend/src/domain/ports/SubscriptionRepository.ts
+--- a/backend/src/domain/ports/SubscriptionRepository.ts	(revision 07ea4c9389af5469c545aeccce2cc6ffdc391d98)
++++ b/backend/src/domain/ports/SubscriptionRepository.ts	(date 1788859192964)
+@@ -1,0 +1,6 @@
++import {Subscription} from "../entities/Subscription"
++
++export interface SubscriptionRepository {
++    findActiveByUserId(userId: string): Promise<Subscription | null>
++    save(subscription: Subscription): Promise<void>
++}
+Index: backend/src/domain/use-cases/SubscribeUser.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/domain/use-cases/SubscribeUser.ts b/backend/src/domain/use-cases/SubscribeUser.ts
+--- a/backend/src/domain/use-cases/SubscribeUser.ts	(revision 07ea4c9389af5469c545aeccce2cc6ffdc391d98)
++++ b/backend/src/domain/use-cases/SubscribeUser.ts	(date 1788859523311)
+@@ -1,0 +1,3 @@
++export class SubscribeUser {
++    constructor(private readonly )
++}
+\ No newline at end of file
+Index: backend/.env.example
+===================================================================
+diff --git a/backend/.env.example b/backend/.env.example
+deleted file mode 100644
+--- a/backend/.env.example	(revision 07ea4c9389af5469c545aeccce2cc6ffdc391d98)
++++ /dev/null	(revision 07ea4c9389af5469c545aeccce2cc6ffdc391d98)
+@@ -1,5 +0,0 @@
+-# Copy this file to `.env` and replace the placeholder with your real connection string.
+-# Connection string for PostgreSQL.
+-# Requires PostgreSQL >= 15.
+-
+-DATABASE_URL="postgresql://user:password@localhost:5432/mydb"
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"4b4123d5-39a4-4943-a8ff-7da4a66ae709\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/backend/src/domain/errors/InvalidCredentialsError.ts\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/backend/.gitignore\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/.gitignore\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/backend/package.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/package.json\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/backend/prisma.config.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/prisma.config.ts\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/backend/src/adapters/db/PrismaUserRepository.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/src/adapters/db/PrismaUserRepository.ts\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/backend/src/adapters/db/prisma-client.ts\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/backend/src/adapters/http/plugins/jwt.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/src/adapters/http/plugins/jwt.ts\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/backend/src/adapters/http/routes/auth.routes.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/src/adapters/http/routes/auth.routes.ts\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/backend/src/adapters/http/server.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/src/adapters/http/server.ts\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/backend/src/config/di.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/src/config/di.ts\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/backend/src/config/env.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/src/config/env.ts\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/backend/src/domain/entities/User.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/src/domain/entities/User.ts\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/backend/src/domain/errors/UserAlreadyExistsError.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/src/domain/errors/UserAlreadyExistsError.ts\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/backend/src/domain/ports/UserRepository.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/src/domain/ports/UserRepository.ts\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/backend/src/domain/use-cases/LoginUser.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/src/domain/use-cases/LoginUser.ts\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/backend/src/domain/use-cases/RegisterUser.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/src/domain/use-cases/RegisterUser.ts\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/backend/tsconfig.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/tsconfig.json\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"McpProjectServerCommands\">\n    <commands />\n    <urls />\n  </component>\n  <component name=\"NextEditCompletionFeaturesState\">\n    <decayedCancelled>\n      <entry key=\"MS100\" value=\"1.194575870331387\" />\n      <entry key=\"MS500\" value=\"3.161047657110166\" />\n      <entry key=\"S2\" value=\"8.196503294987396\" />\n      <entry key=\"S5\" value=\"13.898086278658743\" />\n      <entry key=\"S10\" value=\"18.77518814206553\" />\n      <entry key=\"S30\" value=\"24.218467105400645\" />\n      <entry key=\"S60\" value=\"26.001483307941644\" />\n      <entry key=\"M2\" value=\"26.997983305609193\" />\n      <entry key=\"M5\" value=\"29.768767531830072\" />\n      <entry key=\"M10\" value=\"42.493106589279094\" />\n      <entry key=\"M15\" value=\"64.13211094241606\" />\n      <entry key=\"M30\" value=\"154.46534831500807\" />\n      <entry key=\"H1\" value=\"314.5439951870759\" />\n      <entry key=\"H2\" value=\"488.85170372693386\" />\n      <entry key=\"H4\" value=\"624.6983844628181\" />\n      <entry key=\"D1\" value=\"777.0402557839761\" />\n      <entry key=\"W1\" value=\"807.7358245726097\" />\n    </decayedCancelled>\n    <decayedSelected>\n      <entry key=\"MS100\" value=\"0.0\" />\n      <entry key=\"MS500\" value=\"0.0\" />\n      <entry key=\"S2\" value=\"2.0802619958633526E-178\" />\n      <entry key=\"S5\" value=\"9.694319955940084E-72\" />\n      <entry key=\"S10\" value=\"4.030282750881069E-36\" />\n      <entry key=\"S30\" value=\"2.6572750097414917E-12\" />\n      <entry key=\"S60\" value=\"2.8287583934986395E-6\" />\n      <entry key=\"M2\" value=\"0.0032100672950687633\" />\n      <entry key=\"M5\" value=\"0.229861344526809\" />\n      <entry key=\"M10\" value=\"1.0780873960783366\" />\n      <entry key=\"M15\" value=\"2.201042029801776\" />\n      <entry key=\"M30\" value=\"6.744049752941071\" />\n      <entry key=\"H1\" value=\"14.97792260527016\" />\n      <entry key=\"H2\" value=\"23.883930102275407\" />\n      <entry key=\"H4\" value=\"30.71044882772747\" />\n      <entry key=\"D1\" value=\"38.24085945669127\" />\n      <entry key=\"W1\" value=\"39.74290031918213\" />\n    </decayedSelected>\n    <decayedShown>\n      <entry key=\"MS100\" value=\"0.6064893646561315\" />\n      <entry key=\"MS500\" value=\"2.9815336712200136\" />\n      <entry key=\"S2\" value=\"8.136635149595838\" />\n      <entry key=\"S5\" value=\"13.868184672369958\" />\n      <entry key=\"S10\" value=\"18.757747207987137\" />\n      <entry key=\"S30\" value=\"24.21173359662001\" />\n      <entry key=\"S60\" value=\"25.997968899783523\" />\n      <entry key=\"M2\" value=\"26.999252400566867\" />\n      <entry key=\"M5\" value=\"29.9937366625464\" />\n      <entry key=\"M10\" value=\"43.56006975518239\" />\n      <entry key=\"M15\" value=\"66.31656544323279\" />\n      <entry key=\"M30\" value=\"161.181349597817\" />\n      <entry key=\"H1\" value=\"329.49029288812767\" />\n      <entry key=\"H2\" value=\"512.7104243271558\" />\n      <entry key=\"H4\" value=\"655.3926370545547\" />\n      <entry key=\"D1\" value=\"815.277755176275\" />\n      <entry key=\"W1\" value=\"847.4782260370287\" />\n    </decayedShown>\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 2,\n  &quot;fromUser&quot;: false\n}</component>\n  <component name=\"ProjectId\" id=\"3J07QLuz9wjcd5uYynNAscsWLQS\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,\n    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,\n    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\n    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,\n    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/home/arch/stripe_subscription&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,\n    &quot;ts.external.directory.path&quot;: &quot;/home/arch/.cache/JetBrains/WebStorm2026.2/ts-go-native-preview/v7.0.0-dev.jetbrains.20260702.4/node_modules/@typescript/native-preview-linux-x64/lib&quot;\n  }\n}</component>\n  <component name=\"ReactDesignerToolWindowState\">\n    <option name=\"myId2Visible\">\n      <map>\n        <entry key=\"com.intellij.reactbuddy.reactComponents\" value=\"false\" />\n        <entry key=\"com.intellij.reactbuddy.reactInspector\" value=\"false\" />\n        <entry key=\"com.intellij.reactbuddy.storybook\" value=\"false\" />\n      </map>\n    </option>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.9437.145\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"4b4123d5-39a4-4943-a8ff-7da4a66ae709\" name=\"Changes\" comment=\"\" />\n      <created>1788786115851</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1788786115851</updated>\n      <workItem from=\"1788786117909\" duration=\"4346000\" />\n      <workItem from=\"1788793297703\" duration=\"879000\" />\n      <workItem from=\"1788794324475\" duration=\"5890000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 07ea4c9389af5469c545aeccce2cc6ffdc391d98)
++++ b/.idea/workspace.xml	(date 1788859225574)
+@@ -5,24 +5,11 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="4b4123d5-39a4-4943-a8ff-7da4a66ae709" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/backend/src/domain/errors/InvalidCredentialsError.ts" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/backend/prisma.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma.config.ts" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/backend/src/adapters/db/PrismaUserRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/adapters/db/PrismaUserRepository.ts" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/backend/src/adapters/db/prisma-client.ts" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/backend/src/adapters/http/plugins/jwt.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/adapters/http/plugins/jwt.ts" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/backend/src/adapters/http/routes/auth.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/adapters/http/routes/auth.routes.ts" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/backend/src/adapters/http/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/adapters/http/server.ts" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/backend/src/config/di.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/config/di.ts" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/backend/src/config/env.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/config/env.ts" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/backend/src/domain/entities/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/entities/User.ts" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/backend/src/domain/errors/UserAlreadyExistsError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/errors/UserAlreadyExistsError.ts" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/backend/src/domain/ports/UserRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/ports/UserRepository.ts" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/backend/src/domain/use-cases/LoginUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/use-cases/LoginUser.ts" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/backend/src/domain/use-cases/RegisterUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/use-cases/RegisterUser.ts" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/backend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tsconfig.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/backend/.env.example" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/backend/src/domain/entities/Subscription.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/entities/Subscription.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/backend/src/domain/ports/PaymentGateway.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/ports/PaymentGateway.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/backend/src/domain/ports/SubscriptionRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/domain/ports/SubscriptionRepository.ts" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -38,61 +25,61 @@
+   </component>
+   <component name="NextEditCompletionFeaturesState">
+     <decayedCancelled>
+-      <entry key="MS100" value="1.194575870331387" />
+-      <entry key="MS500" value="3.161047657110166" />
+-      <entry key="S2" value="8.196503294987396" />
+-      <entry key="S5" value="13.898086278658743" />
+-      <entry key="S10" value="18.77518814206553" />
+-      <entry key="S30" value="24.218467105400645" />
+-      <entry key="S60" value="26.001483307941644" />
+-      <entry key="M2" value="26.997983305609193" />
+-      <entry key="M5" value="29.768767531830072" />
+-      <entry key="M10" value="42.493106589279094" />
+-      <entry key="M15" value="64.13211094241606" />
+-      <entry key="M30" value="154.46534831500807" />
+-      <entry key="H1" value="314.5439951870759" />
+-      <entry key="H2" value="488.85170372693386" />
+-      <entry key="H4" value="624.6983844628181" />
+-      <entry key="D1" value="777.0402557839761" />
+-      <entry key="W1" value="807.7358245726097" />
++      <entry key="MS100" value="1.0" />
++      <entry key="MS500" value="1.0" />
++      <entry key="S2" value="1.0000000000000007" />
++      <entry key="S5" value="1.0000022002096147" />
++      <entry key="S10" value="1.00417872236318" />
++      <entry key="S30" value="1.7918186723030773" />
++      <entry key="S60" value="4.27330291001106" />
++      <entry key="M2" value="11.008868104284904" />
++      <entry key="M5" value="40.532897972179796" />
++      <entry key="M10" value="78.75322893806576" />
++      <entry key="M15" value="110.01315867336262" />
++      <entry key="M30" value="206.24020941682053" />
++      <entry key="H1" value="372.5361341163488" />
++      <entry key="H2" value="560.3540920099639" />
++      <entry key="H4" value="710.8126374300823" />
++      <entry key="D1" value="882.9225611058465" />
++      <entry key="W1" value="917.9766460074874" />
+     </decayedCancelled>
+     <decayedSelected>
+       <entry key="MS100" value="0.0" />
+-      <entry key="MS500" value="0.0" />
+-      <entry key="S2" value="2.0802619958633526E-178" />
+-      <entry key="S5" value="9.694319955940084E-72" />
+-      <entry key="S10" value="4.030282750881069E-36" />
+-      <entry key="S30" value="2.6572750097414917E-12" />
+-      <entry key="S60" value="2.8287583934986395E-6" />
+-      <entry key="M2" value="0.0032100672950687633" />
+-      <entry key="M5" value="0.229861344526809" />
+-      <entry key="M10" value="1.0780873960783366" />
+-      <entry key="M15" value="2.201042029801776" />
+-      <entry key="M30" value="6.744049752941071" />
+-      <entry key="H1" value="14.97792260527016" />
+-      <entry key="H2" value="23.883930102275407" />
+-      <entry key="H4" value="30.71044882772747" />
+-      <entry key="D1" value="38.24085945669127" />
+-      <entry key="W1" value="39.74290031918213" />
++      <entry key="MS500" value="8.743286571931938E-81" />
++      <entry key="S2" value="9.669826420422826E-21" />
++      <entry key="S5" value="9.866598850714335E-9" />
++      <entry key="S10" value="9.933124854549052E-5" />
++      <entry key="S30" value="0.047933700970174735" />
++      <entry key="S60" value="0.2854811596648471" />
++      <entry key="M2" value="0.9466615171327993" />
++      <entry key="M5" value="2.421515076847977" />
++      <entry key="M10" value="3.8535078150025783" />
++      <entry key="M15" value="5.0902899675280775" />
++      <entry key="M30" value="9.44004709129329" />
++      <entry key="H1" value="17.651238635510403" />
++      <entry key="H2" value="27.06405737293911" />
++      <entry key="H4" value="34.543987473883334" />
++      <entry key="D1" value="42.998676737024304" />
++      <entry key="W1" value="44.70693228593181" />
+     </decayedSelected>
+     <decayedShown>
+-      <entry key="MS100" value="0.6064893646561315" />
+-      <entry key="MS500" value="2.9815336712200136" />
+-      <entry key="S2" value="8.136635149595838" />
+-      <entry key="S5" value="13.868184672369958" />
+-      <entry key="S10" value="18.757747207987137" />
+-      <entry key="S30" value="24.21173359662001" />
+-      <entry key="S60" value="25.997968899783523" />
+-      <entry key="M2" value="26.999252400566867" />
+-      <entry key="M5" value="29.9937366625464" />
+-      <entry key="M10" value="43.56006975518239" />
+-      <entry key="M15" value="66.31656544323279" />
+-      <entry key="M30" value="161.181349597817" />
+-      <entry key="H1" value="329.49029288812767" />
+-      <entry key="H2" value="512.7104243271558" />
+-      <entry key="H4" value="655.3926370545547" />
+-      <entry key="D1" value="815.277755176275" />
+-      <entry key="W1" value="847.4782260370287" />
++      <entry key="MS100" value="0.08420209855410564" />
++      <entry key="MS500" value="0.6096275470381516" />
++      <entry key="S2" value="0.8836212382052573" />
++      <entry key="S5" value="0.9517159368383942" />
++      <entry key="S10" value="0.9795579892665095" />
++      <entry key="S30" value="1.8142323616780223" />
++      <entry key="S60" value="4.519447598646304" />
++      <entry key="M2" value="11.909613622204848" />
++      <entry key="M5" value="42.910496446693166" />
++      <entry key="M10" value="82.57027418609863" />
++      <entry key="M15" value="115.06968332948821" />
++      <entry key="M30" value="215.6450318266743" />
++      <entry key="H1" value="390.15232179429273" />
++      <entry key="H2" value="587.3907055019388" />
++      <entry key="H4" value="745.3389696027107" />
++      <entry key="D1" value="925.9175538006307" />
++      <entry key="W1" value="962.6830305783931" />
+     </decayedShown>
+   </component>
+   <component name="ProjectColorInfo">{
+@@ -153,7 +140,8 @@
+       <updated>1788786115851</updated>
+       <workItem from="1788786117909" duration="4346000" />
+       <workItem from="1788793297703" duration="879000" />
+-      <workItem from="1788794324475" duration="5890000" />
++      <workItem from="1788794324475" duration="6868000" />
++      <workItem from="1788858255071" duration="970000" />
+     </task>
+     <servers />
+   </component>

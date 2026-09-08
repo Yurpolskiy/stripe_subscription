@@ -8,4 +8,5 @@ function required(name: string): string {
 
 export const env = {
     jwtSecret: required('JWT_SECRET'),
+    stripeSecret: required('STRIPE_SECRET'),
 };
